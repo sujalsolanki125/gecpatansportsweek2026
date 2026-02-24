@@ -67,6 +67,10 @@
     .game-slider-track {
       animation: slide-games 18s ease-in-out infinite;
     }
+    .slide-img {
+      filter: brightness(0.92) contrast(1.12) saturate(1.35);
+      transition: filter 0.5s ease;
+    }
     .game-card {
       background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
       backdrop-filter: blur(20px);
@@ -123,13 +127,15 @@
 <div class="relative mx-auto h-64 md:h-96 rounded-md overflow-hidden shadow-2xl">
 <!-- Image Slider -->
 <div class="w-[600%] h-full flex game-slider-track">
-<img src="assets/slide1.jpeg" alt="Sports Action 1" class="w-1/6 h-full object-cover"/>
-<img src="assets/slide2.jpeg" alt="Sports Action 2" class="w-1/6 h-full object-cover"/>
-<img src="assets/slide3.jpeg" alt="Sports Action 3" class="w-1/6 h-full object-cover object-top"/>
-<img src="assets/slide1.jpeg" alt="Sports Action 4" class="w-1/6 h-full object-cover"/>
-<img src="assets/slide2.jpeg" alt="Sports Action 5" class="w-1/6 h-full object-cover"/>
-<img src="assets/slide3.jpeg" alt="Sports Action 6" class="w-1/6 h-full object-cover object-top"/>
+<img src="assets/slide1.jpeg" alt="Sports Action 1" class="slide-img w-1/6 h-full object-cover"/>
+<img src="assets/slide2.jpeg" alt="Sports Action 2" class="slide-img w-1/6 h-full object-cover"/>
+<img src="assets/slide3.jpeg" alt="Sports Action 3" class="slide-img w-1/6 h-full object-cover object-top"/>
+<img src="assets/slide1.jpeg" alt="Sports Action 4" class="slide-img w-1/6 h-full object-cover"/>
+<img src="assets/slide2.jpeg" alt="Sports Action 5" class="slide-img w-1/6 h-full object-cover"/>
+<img src="assets/slide3.jpeg" alt="Sports Action 6" class="slide-img w-1/6 h-full object-cover object-top"/>
 </div>
+<!-- Color tint overlay -->
+<div class="absolute inset-0 z-[4] pointer-events-none" style="background: linear-gradient(135deg, rgba(10,20,40,0.25) 0%, rgba(37,192,244,0.08) 50%, rgba(10,20,40,0.30) 100%); mix-blend-mode: multiply;"></div>
 <!-- Dark overlay for readability -->
 <div class="absolute inset-0 z-[5] pointer-events-none" style="background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.10) 50%, rgba(0,0,0,0.55) 100%);"></div>
 <!-- Text Overlay -->
