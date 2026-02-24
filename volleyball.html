@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Volleyball – Sports Mahotsav 2026</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#25c0f4","background-dark":"#0a0f12"},fontFamily:{display:["Lexend"]}}}}</script>
+<style>
+.hero-gradient{background-image:linear-gradient(rgba(0,0,0,0.72),rgba(0,0,0,0.72)),url('assets/Hero Banner.png');background-size:cover;background-position:center;background-attachment:fixed}
+.glass-panel{background:rgba(255,255,255,0.04);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1)}
+.info-card{background:linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);box-shadow:0 8px 32px rgba(0,0,0,0.3)}
+.btn-register{background:linear-gradient(135deg,#25c0f4,#1ea5d9);box-shadow:0 4px 15px rgba(37,192,244,0.35);transition:all 0.3s ease}
+.btn-register:hover{box-shadow:0 6px 24px rgba(37,192,244,0.55);transform:translateY(-2px)}
+</style>
+</head>
+<body class="bg-background-dark font-display text-slate-100">
+<div class="relative min-h-screen flex flex-col hero-gradient overflow-x-hidden">
+<div class="flex h-full grow flex-col">
+<header class="flex items-center justify-between border-b border-white/10 px-6 md:px-20 py-4 glass-panel sticky top-0 z-50">
+  <div class="flex items-center gap-3"><div class="h-10 w-10"><img src="assets/collegelogo.png" alt="Logo" class="h-full w-full object-contain"/></div><h2 class="text-slate-100 text-sm md:text-xl font-bold">Sports Week 2026</h2></div>
+  <nav class="hidden md:flex items-center gap-10">
+    <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="index.html">Home</a>
+    <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="game.html">Game</a>
+    <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="faq.html">FAQs</a>
+    <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="contact.html">Contact</a>
+  </nav>
+  <a href="game.html" class="flex items-center gap-1 text-slate-400 hover:text-primary transition-colors text-sm font-medium"><span class="material-symbols-outlined text-lg">arrow_back</span>Back to Games</a>
+</header>
+<main class="flex-1 max-w-5xl mx-auto w-full px-4 md:px-8 py-12 space-y-10">
+  <div class="text-center space-y-2"><span class="text-primary text-xs font-semibold uppercase tracking-widest">Sports Mahotsav 2026</span><h1 class="text-4xl md:text-6xl font-bold text-white">Volleyball</h1></div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="info-card rounded-lg p-5 flex items-center gap-4"><span class="material-symbols-outlined text-primary text-4xl">group</span><div><p class="text-slate-400 text-xs uppercase tracking-wider">Team Size</p><p class="text-white text-xl font-bold">6 Players</p></div></div>
+    <div class="info-card rounded-lg p-5 flex items-center gap-4"><span class="material-symbols-outlined text-primary text-4xl">event</span><div><p class="text-slate-400 text-xs uppercase tracking-wider">Event Date</p><p class="text-white text-xl font-bold">March 13, 2026</p></div></div>
+    <div class="info-card rounded-lg p-5 flex items-center gap-4"><span class="material-symbols-outlined text-primary text-4xl">location_on</span><div><p class="text-slate-400 text-xs uppercase tracking-wider">Venue</p><p class="text-white text-xl font-bold">Outdoor Court</p></div></div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="info-card rounded-lg p-6 space-y-3"><h2 class="text-xl font-bold text-primary">About the Event</h2><p class="text-slate-300 text-sm leading-relaxed">Volleyball is a team sport where six players on each side work together to ground the ball on the opponent's court. Featuring powerful spikes, precise sets and crucial blocks, it's one of the most exciting team sports at Sports Mahotsav 2026.</p></div>
+    <div class="info-card rounded-lg p-6 space-y-3"><h2 class="text-xl font-bold text-primary">Rules & Guidelines</h2><ul class="text-slate-300 text-sm space-y-2">
+      <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>Teams of 6 players plus up to 6 substitutes.</li>
+      <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>Best of 3 sets; first to 25 points wins a set.</li>
+      <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>Max 3 touches per side before returning the ball.</li>
+      <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>Sports shoes and college uniform mandatory.</li>
+      <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>College ID required on event day.</li>
+    </ul></div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="info-card rounded-lg p-6 flex items-center gap-6">
+      <img src="assets/collegelogo.png" alt="Coordinator" class="w-24 h-24 rounded-full object-cover border-4 border-primary/50 shadow-lg flex-shrink-0"/>
+      <div class="space-y-2"><p class="text-slate-400 text-xs uppercase tracking-wider">Sports Coordinator</p><h3 class="text-white text-xl font-bold">Prof. Dinesh Rao</h3>
+        <a href="tel:+919876541010" class="flex items-center gap-2 text-primary hover:text-blue-300 transition-colors text-sm font-medium"><span class="material-symbols-outlined text-base">call</span>+91 98765 41010</a>
+        <a href="mailto:dinesh.rao@katpur.edu" class="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors text-sm"><span class="material-symbols-outlined text-base">mail</span>dinesh.rao@katpur.edu</a>
+      </div>
+    </div>
+    <div class="info-card rounded-lg p-6 flex flex-col items-center justify-center text-center gap-5">
+      <span class="material-symbols-outlined text-primary text-5xl">app_registration</span>
+      <div><h3 class="text-white text-xl font-bold mb-1">Ready to Participate?</h3><p class="text-slate-400 text-sm">Fill out the registration form to secure your spot.</p></div>
+      <a href="https://forms.google.com" target="_blank" class="btn-register px-8 py-3 rounded-full text-white font-semibold text-base w-full text-center">Register via Google Form</a>
+    </div>
+  </div>
+</main>
+<footer class="border-t border-white/10 glass-panel py-8 px-6 text-center text-slate-500 text-sm">© 2026 Sports Mahotsav · Katpur College Patan</footer>
+</div>
+</div>
+</body>
+</html>
