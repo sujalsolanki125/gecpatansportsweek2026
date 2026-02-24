@@ -1,0 +1,371 @@
+﻿/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Background Image */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+/* Hero Content Container */
+.hero-content {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+/* Title Image */
+.title-container {
+    animation: titleEntry 1.5s ease-out forwards;
+    opacity: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+}
+
+@keyframes titleEntry {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px) scale(0.5);
+    }
+    60% {
+        transform: translateY(10px) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.title-image {
+    max-width: 700px;
+    width: 85%;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+}
+
+/* Characters Image */
+.characters-container {
+    animation: charactersEntry 2s ease-out 0.5s forwards;
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+@keyframes charactersEntry {
+    0% {
+        opacity: 0;
+        transform: translateY(150px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.characters-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: bottom center;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+/* Enter Button */
+.enter-button {
+    font-family: 'Bangers', cursive;
+    font-size: 1.8rem;
+    padding: 18px 45px;
+    background: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FFC837 100%);
+    color: white;
+    border: 4px solid white;
+    border-radius: 60px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 
+        0 8px 30px rgba(255, 107, 53, 0.6),
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    animation: buttonEntry 1.2s ease-out 1.5s forwards;
+    opacity: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 20;
+    white-space: nowrap;
+}
+
+@keyframes buttonEntry {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0) rotate(-180deg);
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(1.15) rotate(10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotate(0);
+    }
+}
+
+.enter-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 
+        0 20px 60px rgba(255, 107, 53, 0.8),
+        0 10px 25px rgba(0, 0, 0, 0.4),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.2);
+    border-color: #FFD700;
+}
+
+.enter-button:active {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.button-text {
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 2;
+}
+
+.button-icon {
+    font-size: 2.5rem;
+    animation: iconBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes iconBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(20deg);
+    }
+}
+
+/* Button Shine Effect */
+.enter-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: buttonShine 3s infinite;
+}
+
+@keyframes buttonShine {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+/* ============================================
+   FLOATING DECORATIVE ELEMENTS
+   ============================================ */
+.floating-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.float-emoji {
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0;
+    animation: floatAnimation 8s ease-in-out infinite;
+}
+
+.float-1 {
+    top: 10%;
+    left: 8%;
+    animation-delay: 0s;
+}
+
+.float-2 {
+    top: 25%;
+    right: 12%;
+    animation-delay: 1.5s;
+}
+
+.float-3 {
+    bottom: 30%;
+    left: 5%;
+    animation-delay: 3s;
+}
+
+.float-4 {
+    bottom: 15%;
+    right: 8%;
+    animation-delay: 4.5s;
+}
+
+.float-5 {
+    top: 50%;
+    right: 5%;
+    animation-delay: 6s;
+}
+
+.float-6 {
+    top: 35%;
+    left: 10%;
+    animation-delay: 7.5s;
+}
+
+@keyframes floatAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotate(0deg) scale(0.8);
+    }
+    10% {
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-40px) rotate(180deg) scale(1);
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-80px) rotate(360deg) scale(0.8);
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1200px) {
+    .title-container {
+        padding-top: 60px;
+    }
+
+    .title-image {
+        max-width: 600px;
+    }
+
+    .enter-button {
+        font-size: 1.5rem;
+        padding: 16px 40px;
+    }
+
+    .float-emoji {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .title-container {
+        padding-top: 40px;
+    }
+
+    .title-image {
+        max-width: 450px;
+    }
+
+    .enter-button {
+        font-size: 1.2rem;
+        padding: 14px 30px;
+        gap: 10px;
+    }
+
+    .button-icon {
+        font-size: 1.8rem;
+    }
+
+    .float-emoji {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-container {
+        padding-top: 30px;
+    }
+
+    .title-image {
+        max-width: 320px;
+    }
+
+    .enter-button {
+        font-size: 1rem;
+        padding: 12px 25px;
+        gap: 8px;
+    }
+
+    .button-icon {
+        font-size: 1.5rem;
+    }
+
+    .float-emoji {
+        font-size: 1.5rem;
+    }
+}
