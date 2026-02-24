@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact – Sports Mahotsav 2026</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#25c0f4",
+            "background-dark": "#0a0f12",
+          },
+          fontFamily: { "display": ["Lexend"] },
+        },
+      },
+    }
+</script>
+<style>
+    .hero-gradient {
+      background-image: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)), url('assets/Hero Banner.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .glass-panel {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .coord-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+      transition: all 0.3s ease;
+    }
+    .coord-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(37,192,244,0.35);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4), 0 0 28px rgba(37,192,244,0.15);
+    }
+    .avatar-ring {
+      border: 3px solid rgba(37,192,244,0.5);
+      box-shadow: 0 0 20px rgba(37,192,244,0.25);
+    }
+    .badge {
+      background: rgba(37,192,244,0.12);
+      border: 1px solid rgba(37,192,244,0.25);
+      color: #25c0f4;
+    }
+    .info-row {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .info-row:last-child {
+      border-bottom: none;
+    }
+</style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 selection:bg-primary/30">
+<div class="relative min-h-screen w-full flex flex-col hero-gradient overflow-x-hidden">
+<div class="flex h-full grow flex-col">
+
+  <!-- Navbar -->
+  <header class="flex items-center justify-between whitespace-nowrap border-b border-white/10 px-6 md:px-20 py-4 glass-panel sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+      <div class="h-10 w-10">
+        <img src="assets/collegelogo.png" alt="College Logo" class="h-full w-full object-contain"/>
+      </div>
+      <h2 class="text-slate-100 text-sm md:text-xl font-bold tracking-tight">Sports Week 2026</h2>
+    </div>
+    <nav class="hidden md:flex items-center gap-10">
+      <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="index.html#home">Home</a>
+      <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="game.html">Game</a>
+      <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="index.html#faq">FAQs</a>
+      <a class="text-primary text-sm font-semibold" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="flex-1 max-w-6xl mx-auto w-full px-4 md:px-8 py-12 md:py-16 space-y-14">
+
+    <!-- Page Header -->
+    <div class="text-center space-y-3">
+      <span class="text-primary text-xs font-semibold uppercase tracking-widest">Sports Mahotsav 2026</span>
+      <h1 class="text-4xl md:text-6xl font-bold text-white">Meet the <span class="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Coordinators</span></h1>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto">Have questions? Reach out directly to our sports week coordinators.</p>
+    </div>
+
+    <!-- Main Coordinator -->
+    <div>
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-6 flex items-center gap-2">
+        <span class="material-symbols-outlined text-base">star</span> Main Coordinator
+      </h2>
+      <div class="coord-card rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start gap-8">
+        <div class="flex-shrink-0 flex flex-col items-center gap-3">
+          <img src="assets/collegelogo.png" alt="Main Coordinator" class="w-28 h-28 md:w-36 md:h-36 rounded-full object-cover avatar-ring"/>
+          <span class="badge text-xs font-semibold px-3 py-1 rounded-full">Main Coordinator</span>
+        </div>
+        <div class="flex-1 w-full space-y-5 text-center md:text-left">
+          <div>
+            <h3 class="text-2xl md:text-3xl font-bold text-white">Prof. Arvind Kumar</h3>
+            <p class="text-slate-400 text-sm mt-1">Sports Week 2026 · Katpur College Patan</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="info-row pb-3 flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-xl">call</span>
+              <div>
+                <p class="text-slate-500 text-xs">Phone</p>
+                <a href="tel:+919876540000" class="text-white font-medium hover:text-primary transition-colors">+91 98765 40000</a>
+              </div>
+            </div>
+            <div class="info-row pb-3 flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-xl">mail</span>
+              <div>
+                <p class="text-slate-500 text-xs">Email</p>
+                <a href="mailto:arvind.kumar@katpur.edu" class="text-white font-medium hover:text-primary transition-colors text-sm">arvind.kumar@katpur.edu</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Student Coordinators -->
+    <div>
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-6 flex items-center gap-2">
+        <span class="material-symbols-outlined text-base">groups</span> Student Coordinators
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+
+        <!-- Coordinator 1 -->
+        <div class="coord-card rounded-xl p-6 flex flex-col items-center text-center gap-5">
+          <div class="relative">
+            <img src="assets/collegelogo.png" alt="Student Coordinator" class="w-24 h-24 rounded-full object-cover avatar-ring"/>
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-white text-xl font-bold">Rahul Sharma</h3>
+            <div class="flex flex-wrap justify-center gap-2 mt-2">
+              <span class="badge text-xs px-3 py-1 rounded-full">6th Sem</span>
+              <span class="badge text-xs px-3 py-1 rounded-full">Computer Science</span>
+            </div>
+          </div>
+          <div class="w-full space-y-2">
+            <div class="info-row pb-2 flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">call</span>
+              <a href="tel:+919876541001" class="text-slate-300 hover:text-primary transition-colors text-sm font-medium">+91 98765 41001</a>
+            </div>
+            <div class="flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">sports_cricket</span>
+              <span class="text-slate-400 text-xs">Cricket & Kabaddi</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coordinator 2 -->
+        <div class="coord-card rounded-xl p-6 flex flex-col items-center text-center gap-5">
+          <div class="relative">
+            <img src="assets/collegelogo.png" alt="Student Coordinator" class="w-24 h-24 rounded-full object-cover avatar-ring"/>
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-white text-xl font-bold">Priya Patel</h3>
+            <div class="flex flex-wrap justify-center gap-2 mt-2">
+              <span class="badge text-xs px-3 py-1 rounded-full">4th Sem</span>
+              <span class="badge text-xs px-3 py-1 rounded-full">Information Tech</span>
+            </div>
+          </div>
+          <div class="w-full space-y-2">
+            <div class="info-row pb-2 flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">call</span>
+              <a href="tel:+919876541002" class="text-slate-300 hover:text-primary transition-colors text-sm font-medium">+91 98765 41002</a>
+            </div>
+            <div class="flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">fitness_center</span>
+              <span class="text-slate-400 text-xs">Tug Of War</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coordinator 3 -->
+        <div class="coord-card rounded-xl p-6 flex flex-col items-center text-center gap-5">
+          <div class="relative">
+            <img src="assets/collegelogo.png" alt="Student Coordinator" class="w-24 h-24 rounded-full object-cover avatar-ring"/>
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-white text-xl font-bold">Amit Desai</h3>
+            <div class="flex flex-wrap justify-center gap-2 mt-2">
+              <span class="badge text-xs px-3 py-1 rounded-full">6th Sem</span>
+              <span class="badge text-xs px-3 py-1 rounded-full">Mechanical Engg</span>
+            </div>
+          </div>
+          <div class="w-full space-y-2">
+            <div class="info-row pb-2 flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">call</span>
+              <a href="tel:+919876541003" class="text-slate-300 hover:text-primary transition-colors text-sm font-medium">+91 98765 41003</a>
+            </div>
+            <div class="flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">emoji_events</span>
+              <span class="text-slate-400 text-xs">All Events</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coordinator 4 -->
+        <div class="coord-card rounded-xl p-6 flex flex-col items-center text-center gap-5">
+          <div class="relative">
+            <img src="assets/collegelogo.png" alt="Student Coordinator" class="w-24 h-24 rounded-full object-cover avatar-ring"/>
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-white text-xl font-bold">Sneha Joshi</h3>
+            <div class="flex flex-wrap justify-center gap-2 mt-2">
+              <span class="badge text-xs px-3 py-1 rounded-full">4th Sem</span>
+              <span class="badge text-xs px-3 py-1 rounded-full">Civil Engg</span>
+            </div>
+          </div>
+          <div class="w-full space-y-2">
+            <div class="info-row pb-2 flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">call</span>
+              <a href="tel:+919876541004" class="text-slate-300 hover:text-primary transition-colors text-sm font-medium">+91 98765 41004</a>
+            </div>
+            <div class="flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">manage_accounts</span>
+              <span class="text-slate-400 text-xs">Registration & Support</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coordinator 5 -->
+        <div class="coord-card rounded-xl p-6 flex flex-col items-center text-center gap-5">
+          <div class="relative">
+            <img src="assets/collegelogo.png" alt="Student Coordinator" class="w-24 h-24 rounded-full object-cover avatar-ring"/>
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-white text-xl font-bold">Karan Mehta</h3>
+            <div class="flex flex-wrap justify-center gap-2 mt-2">
+              <span class="badge text-xs px-3 py-1 rounded-full">2nd Sem</span>
+              <span class="badge text-xs px-3 py-1 rounded-full">Electronics</span>
+            </div>
+          </div>
+          <div class="w-full space-y-2">
+            <div class="info-row pb-2 flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">call</span>
+              <a href="tel:+919876541005" class="text-slate-300 hover:text-primary transition-colors text-sm font-medium">+91 98765 41005</a>
+            </div>
+            <div class="flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">schedule</span>
+              <span class="text-slate-400 text-xs">Scheduling & Logistics</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coordinator 6 -->
+        <div class="coord-card rounded-xl p-6 flex flex-col items-center text-center gap-5">
+          <div class="relative">
+            <img src="assets/collegelogo.png" alt="Student Coordinator" class="w-24 h-24 rounded-full object-cover avatar-ring"/>
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-white text-xl font-bold">Riya Shah</h3>
+            <div class="flex flex-wrap justify-center gap-2 mt-2">
+              <span class="badge text-xs px-3 py-1 rounded-full">6th Sem</span>
+              <span class="badge text-xs px-3 py-1 rounded-full">Computer Science</span>
+            </div>
+          </div>
+          <div class="w-full space-y-2">
+            <div class="info-row pb-2 flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">call</span>
+              <a href="tel:+919876541006" class="text-slate-300 hover:text-primary transition-colors text-sm font-medium">+91 98765 41006</a>
+            </div>
+            <div class="flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">campaign</span>
+              <span class="text-slate-400 text-xs">Media & Promotions</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 glass-panel py-8 px-6 text-center text-slate-500 text-sm">
+    © 2026 Sports Mahotsav · Katpur College Patan
+  </footer>
+
+</div>
+</div>
+</body>
+</html>

@@ -57,12 +57,14 @@
       scrollbar-width: none;
     }
     @keyframes slide-games {
-      0%, 28% { transform: translateX(0%); }
-      33%, 61% { transform: translateX(-33.3333%); }
-      66%, 100% { transform: translateX(-66.6666%); }
+      0%, 20% { transform: translateX(0%); }
+      25%, 45% { transform: translateX(-16.66%); }
+      50%, 70% { transform: translateX(-33.33%); }
+      75%, 95% { transform: translateX(-50%); }
+      100% { transform: translateX(-66.66%); }
     }
     .game-slider-track {
-      animation: slide-games 14s ease-in-out infinite;
+      animation: slide-games 18s ease-in-out infinite;
     }
     .game-card {
       background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
@@ -88,9 +90,11 @@
     }
     .slider-container {
       background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.15);
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+      width: 95vw;
+      max-width: 1200px;
     }
 </style>
 </head>
@@ -108,24 +112,30 @@
 <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="index.html#home">Home</a>
 <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="game.html">Game</a>
 <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="index.html#faq">FAQs</a>
-<a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="index.html#contact">Contact</a>
+<a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="contact.html">Contact</a>
 </nav>
 </header>
 
 <!-- Featured Highlights Section -->
-<section class="max-w-7xl mx-auto w-full px-4 md:px-8 py-12 md:py-16">
-<div class="slider-container rounded-2xl p-6 md:p-8">
-<div class="text-center mb-8">
-<h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
-<span class="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Sports Events</span>
+<section class="w-full px-4 md:px-6 py-8 md:py-12">
+<div class="slider-container rounded-lg p-4 md:p-8 max-w-6xl mx-auto">
+<div class="relative mx-auto h-64 md:h-96 rounded-md overflow-hidden shadow-2xl">
+<!-- Text Overlay -->
+<div class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center bg-black/30">
+<h1 class="text-4xl md:text-7xl font-bold text-white mb-4 md:mb-6">
+<span class="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent drop-shadow-lg">Sports Events</span>
 </h1>
-<p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">Join the excitement! Register for your favorite sports and compete with the best athletes.</p>
+<p class="text-lg md:text-2xl text-white max-w-4xl mx-auto px-4 font-medium drop-shadow-md">Join the excitement! Register for your favorite sports and compete with the best athletes.</p>
 </div>
-<div class="mx-auto max-w-4xl h-48 md:h-72 rounded-xl overflow-hidden shadow-2xl">
-<div class="w-[300%] h-full flex game-slider-track">
-<img src="assets/header11.jpeg" alt="Sports Action 1" class="w-1/3 h-full object-cover"/>
-<img src="assets/Hero Banner.png" alt="Sports Action 2" class="w-1/3 h-full object-cover"/>
-<img src="assets/header11.jpeg" alt="Sports Action 3" class="w-1/3 h-full object-cover"/>
+
+<!-- Image Slider -->
+<div class="w-[600%] h-full flex game-slider-track">
+<img src="assets/header11.jpeg" alt="Sports Action 1" class="w-1/6 h-full object-cover"/>
+<img src="assets/Hero Banner.png" alt="Sports Action 2" class="w-1/6 h-full object-cover"/>
+<img src="assets/header11.jpeg" alt="Sports Action 3" class="w-1/6 h-full object-cover"/>
+<img src="assets/Hero Banner.png" alt="Sports Action 4" class="w-1/6 h-full object-cover"/>
+<img src="assets/header11.jpeg" alt="Sports Action 5" class="w-1/6 h-full object-cover"/>
+<img src="assets/Hero Banner.png" alt="Sports Action 6" class="w-1/6 h-full object-cover"/>
 </div>
 </div>
 </div>
@@ -142,13 +152,10 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-10">
 <!-- Tug Of War Card -->
-<article class="game-card rounded-2xl p-6 group">
-<div class="relative overflow-hidden rounded-xl mb-6">
-<img src="assets/header11.jpeg" alt="Tug Of War Competition" class="h-56 md:h-64 w-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<article class="game-card rounded-lg p-4 group">
+<div class="relative overflow-hidden rounded-md mb-5 aspect-video">
+<img src="assets/header11.jpeg" alt="Tug Of War Competition" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-<div class="absolute top-4 right-4">
-<span class="bg-primary/90 text-white px-3 py-1 rounded-full text-sm font-medium">Team Sport</span>
-</div>
 </div>
 
 <div class="space-y-4">
@@ -162,21 +169,18 @@
 8 players per team
 </span>
 </div>
-<button class="btn-register px-6 py-3 rounded-full text-white font-medium text-sm hover:text-white transition-colors">
+<a href="tugofwar.html" class="btn-register px-6 py-3 rounded-full text-white font-medium text-sm hover:text-white transition-colors">
 Register Now
-</button>
+</a>
 </div>
 </div>
 </article>
 
 <!-- Kabaddi Card -->
-<article class="game-card rounded-2xl p-6 group">
-<div class="relative overflow-hidden rounded-xl mb-6">
-<img src="assets/Hero Banner.png" alt="Kabaddi Match" class="h-56 md:h-64 w-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<article class="game-card rounded-lg p-4 group">
+<div class="relative overflow-hidden rounded-md mb-5 aspect-video">
+<img src="assets/Hero Banner.png" alt="Kabaddi Match" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-<div class="absolute top-4 right-4">
-<span class="bg-primary/90 text-white px-3 py-1 rounded-full text-sm font-medium">Contact Sport</span>
-</div>
 </div>
 
 <div class="space-y-4">
@@ -190,21 +194,18 @@ Register Now
 7 players per team
 </span>
 </div>
-<button class="btn-register px-6 py-3 rounded-full text-white font-medium text-sm hover:text-white transition-colors">
+<a href="kabaddi.html" class="btn-register px-6 py-3 rounded-full text-white font-medium text-sm hover:text-white transition-colors">
 Register Now
-</button>
+</a>
 </div>
 </div>
 </article>
 
 <!-- Cricket Card -->
-<article class="game-card rounded-2xl p-6 group">
-<div class="relative overflow-hidden rounded-xl mb-6">
-<img src="assets/header11.jpeg" alt="Cricket Match" class="h-56 md:h-64 w-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<article class="game-card rounded-lg p-4 group">
+<div class="relative overflow-hidden rounded-md mb-5 aspect-video">
+<img src="assets/header11.jpeg" alt="Cricket Match" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-<div class="absolute top-4 right-4">
-<span class="bg-primary/90 text-white px-3 py-1 rounded-full text-sm font-medium">Ball Sport</span>
-</div>
 </div>
 
 <div class="space-y-4">
@@ -218,9 +219,9 @@ Register Now
 11 players per team
 </span>
 </div>
-<button class="btn-register px-6 py-3 rounded-full text-white font-medium text-sm hover:text-white transition-colors">
+<a href="cricket.html" class="btn-register px-6 py-3 rounded-full text-white font-medium text-sm hover:text-white transition-colors">
 Register Now
-</button>
+</a>
 </div>
 </div>
 </article>

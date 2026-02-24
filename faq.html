@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQs – Sports Mahotsav 2026</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#25c0f4",
+            "background-dark": "#0a0f12",
+          },
+          fontFamily: { "display": ["Lexend"] },
+        },
+      },
+    }
+</script>
+<style>
+    .hero-gradient {
+      background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('assets/Hero Banner.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .glass-panel {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .faq-item {
+      background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.3s ease;
+    }
+    .faq-item:hover {
+      border-color: rgba(37,192,244,0.3);
+      background: linear-gradient(145deg, rgba(37,192,244,0.06), rgba(255,255,255,0.02));
+    }
+    .faq-item.open {
+      border-color: rgba(37,192,244,0.4);
+      box-shadow: 0 0 24px rgba(37,192,244,0.1);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+    .faq-icon {
+      transition: transform 0.3s ease;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+    .category-pill {
+      background: rgba(37,192,244,0.1);
+      border: 1px solid rgba(37,192,244,0.2);
+      color: #25c0f4;
+      transition: all 0.2s ease;
+    }
+    .category-pill:hover, .category-pill.active {
+      background: rgba(37,192,244,0.25);
+      border-color: rgba(37,192,244,0.5);
+    }
+</style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 selection:bg-primary/30">
+<div class="relative min-h-screen w-full flex flex-col hero-gradient overflow-x-hidden">
+<div class="flex h-full grow flex-col">
+
+  <!-- Navbar -->
+  <header class="flex items-center justify-between whitespace-nowrap border-b border-white/10 px-6 md:px-20 py-4 glass-panel sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+      <div class="h-10 w-10">
+        <img src="assets/collegelogo.png" alt="College Logo" class="h-full w-full object-contain"/>
+      </div>
+      <h2 class="text-slate-100 text-sm md:text-xl font-bold tracking-tight">Sports Week 2026</h2>
+    </div>
+    <nav class="hidden md:flex items-center gap-10">
+      <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="index.html#home">Home</a>
+      <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="game.html">Game</a>
+      <a class="text-primary text-sm font-semibold" href="faq.html">FAQs</a>
+      <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="flex-1 max-w-4xl mx-auto w-full px-4 md:px-8 py-12 md:py-16 space-y-12">
+
+    <!-- Page Header -->
+    <div class="text-center space-y-4">
+      <span class="text-primary text-xs font-semibold uppercase tracking-widest">Sports Mahotsav 2026</span>
+      <h1 class="text-4xl md:text-6xl font-bold text-white">Frequently Asked <span class="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Questions</span></h1>
+      <p class="text-slate-400 text-lg max-w-xl mx-auto">Everything you need to know about Sports Mahotsav 2026.</p>
+    </div>
+
+    <!-- Category Pills -->
+    <div class="flex flex-wrap justify-center gap-3">
+      <button onclick="filterFAQ('all', this)" class="category-pill active text-sm font-medium px-5 py-2 rounded-full">All</button>
+      <button onclick="filterFAQ('registration', this)" class="category-pill text-sm font-medium px-5 py-2 rounded-full">Registration</button>
+      <button onclick="filterFAQ('eligibility', this)" class="category-pill text-sm font-medium px-5 py-2 rounded-full">Eligibility</button>
+      <button onclick="filterFAQ('events', this)" class="category-pill text-sm font-medium px-5 py-2 rounded-full">Events</button>
+      <button onclick="filterFAQ('rules', this)" class="category-pill text-sm font-medium px-5 py-2 rounded-full">Rules</button>
+      <button onclick="filterFAQ('general', this)" class="category-pill text-sm font-medium px-5 py-2 rounded-full">General</button>
+    </div>
+
+    <!-- FAQ List -->
+    <div class="space-y-3" id="faq-list">
+
+      <!-- Registration -->
+      <div class="faq-item rounded-xl overflow-hidden" data-category="registration">
+        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-4 p-5 text-left">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0">app_registration</span>
+            <span class="text-white font-semibold text-base md:text-lg">How do I register for a sport?</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-400 text-2xl faq-icon flex-shrink-0">add</span>
+        </button>
+        <div class="faq-answer px-5">
+          <p class="text-slate-300 text-sm leading-relaxed pb-5">Go to the <a href="game.html" class="text-primary underline underline-offset-2">Games page</a>, click "Register Now" on your desired sport, and fill out the Google Form with your details. Make sure to submit the form before the registration deadline.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-xl overflow-hidden" data-category="registration">
+        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-4 p-5 text-left">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0">calendar_month</span>
+            <span class="text-white font-semibold text-base md:text-lg">What is the last date for registration?</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-400 text-2xl faq-icon flex-shrink-0">add</span>
+        </button>
+        <div class="faq-answer px-5">
+          <p class="text-slate-300 text-sm leading-relaxed pb-5">The registration deadline is <span class="text-primary font-semibold">March 7, 2026</span>. Late registrations will not be accepted under any circumstances. We encourage students to register as soon as possible to secure their spot.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-xl overflow-hidden" data-category="registration">
+        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-4 p-5 text-left">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0">sports</span>
+            <span class="text-white font-semibold text-base md:text-lg">Can I register for more than one sport?</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-400 text-2xl faq-icon flex-shrink-0">add</span>
+        </button>
+        <div class="faq-answer px-5">
+          <p class="text-slate-300 text-sm leading-relaxed pb-5">Yes! You can register for multiple sports as long as their event timings do not clash. Each sport requires a separate registration form submission.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-xl overflow-hidden" data-category="registration">
+        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-4 p-5 text-left">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0">paid</span>
+            <span class="text-white font-semibold text-base md:text-lg">Is there a registration fee?</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-400 text-2xl faq-icon flex-shrink-0">add</span>
+        </button>
+        <div class="faq-answer px-5">
+          <p class="text-slate-300 text-sm leading-relaxed pb-5">No. Participation in Sports Mahotsav 2026 is completely <span class="text-primary font-semibold">free of charge</span> for all enrolled students of Katpur College Patan.</p>
+        </div>
+      </div>
+
+      <!-- Eligibility -->
+      <div class="faq-item rounded-xl overflow-hidden" data-category="eligibility">
+        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-4 p-5 text-left">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0">badge</span>
+            <span class="text-white font-semibold text-base md:text-lg">Who is eligible to participate?</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-400 text-2xl faq-icon flex-shrink-0">add</span>
+        </button>
+        <div class="faq-answer px-5">
+          <p class="text-slate-300 text-sm leading-relaxed pb-5">All currently enrolled students of Katpur College Patan across all semesters and branches are eligible to participate. A valid college ID card is mandatory to take part in any event.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-xl overflow-hidden" data-category="eligibility">
+        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-4 p-5 text-left">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0">school</span>
+            <span class="text-white font-semibold text-base md:text-lg">Can students from any semester participate?</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-400 text-2xl faq-icon flex-shrink-0">add</span>
+        </button>
+        <div class="faq-answer px-5">
+          <p class="text-slate-300 text-sm leading-relaxed pb-5">Yes, students from all semesters (1st to 6th) and all branches are welcome to participate. There is no semester or branch restriction for any of the sports events.</p>
+        </div>
+      </div>
+
+      <!-- Events -->
+      <div class="faq-item rounded-xl overflow-hidden" data-category="events">
+        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-4 p-5 text-left">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0">emoji_events</span>
+            <span class="text-white font-semibold text-base md:text-lg">Which sports are included in Sports Mahotsav 2026?</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-400 text-2xl faq-icon flex-shrink-0">add</span>
+        </button>
+        <div class="faq-answer px-5">
+          <p class="text-slate-300 text-sm leading-relaxed pb-5">Sports Mahotsav 2026 includes <span class="text-primary font-semibold">Cricket</span>, <span class="text-primary font-semibold">Kabaddi</span>, and <span class="text-primary font-semibold">Tug Of War</span>. More events may be added — stay updated via the college notice board and this website.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-xl overflow-hidden" data-category="events">
+        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-4 p-5 text-left">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0">location_on</span>
+            <span class="text-white font-semibold text-base md:text-lg">Where will the events be held?</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-400 text-2xl faq-icon flex-shrink-0">add</span>
+        </button>
+        <div class="faq-answer px-5">
+          <p class="text-slate-300 text-sm leading-relaxed pb-5">All events will be held within the Katpur College Patan campus. Cricket will be at the main cricket ground, Kabaddi at the indoor court, and Tug Of War at the main ground. Detailed venue maps will be shared before the event.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-xl overflow-hidden" data-category="events">
+        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-4 p-5 text-left">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0">schedule</span>
+            <span class="text-white font-semibold text-base md:text-lg">What are the event dates?</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-400 text-2xl faq-icon flex-shrink-0">add</span>
+        </button>
+        <div class="faq-answer px-5">
+          <p class="text-slate-300 text-sm leading-relaxed pb-5">The events are scheduled as follows: <span class="text-primary font-semibold">Tug Of War – March 10</span>, <span class="text-primary font-semibold">Kabaddi – March 11</span>, <span class="text-primary font-semibold">Cricket – March 12, 2026</span>. All events start at 9:00 AM. Please report 30 minutes early.</p>
+        </div>
+      </div>
+
+      <!-- Rules -->
+      <div class="faq-item rounded-xl overflow-hidden" data-category="rules">
+        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-4 p-5 text-left">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0">gavel</span>
+            <span class="text-white font-semibold text-base md:text-lg">What should I bring on the event day?</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-400 text-2xl faq-icon flex-shrink-0">add</span>
+        </button>
+        <div class="faq-answer px-5">
+          <p class="text-slate-300 text-sm leading-relaxed pb-5">You must carry your <span class="text-primary font-semibold">college ID card</span> at all times. Sports shoes and proper sports attire (college uniform preferred) are mandatory. Equipment such as balls and ropes will be provided by the organizers.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-xl overflow-hidden" data-category="rules">
+        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-4 p-5 text-left">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0">warning</span>
+            <span class="text-white font-semibold text-base md:text-lg">What happens if a team is disqualified?</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-400 text-2xl faq-icon flex-shrink-0">add</span>
+        </button>
+        <div class="faq-answer px-5">
+          <p class="text-slate-300 text-sm leading-relaxed pb-5">Disqualification may occur for rule violations, misconduct, or not reporting on time. The referee's decision is final. Disqualified teams will not be eligible for prizes or certificates for that event.</p>
+        </div>
+      </div>
+
+      <!-- General -->
+      <div class="faq-item rounded-xl overflow-hidden" data-category="general">
+        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-4 p-5 text-left">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0">workspace_premium</span>
+            <span class="text-white font-semibold text-base md:text-lg">Are there prizes for winners?</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-400 text-2xl faq-icon flex-shrink-0">add</span>
+        </button>
+        <div class="faq-answer px-5">
+          <p class="text-slate-300 text-sm leading-relaxed pb-5">Yes! Winners and runners-up will receive <span class="text-primary font-semibold">trophies, medals, and certificates</span>. All participants will receive a participation certificate. Prize distribution will take place at the closing ceremony.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-xl overflow-hidden" data-category="general">
+        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-4 p-5 text-left">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0">contact_support</span>
+            <span class="text-white font-semibold text-base md:text-lg">Who do I contact if I have more questions?</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-400 text-2xl faq-icon flex-shrink-0">add</span>
+        </button>
+        <div class="faq-answer px-5">
+          <p class="text-slate-300 text-sm leading-relaxed pb-5">Visit our <a href="contact.html" class="text-primary underline underline-offset-2">Contact page</a> to find the details of our sports coordinators. You can call or email them directly for any queries related to Sports Mahotsav 2026.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-xl overflow-hidden" data-category="general">
+        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between gap-4 p-5 text-left">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0">update</span>
+            <span class="text-white font-semibold text-base md:text-lg">Can I cancel my registration after submitting?</span>
+          </div>
+          <span class="material-symbols-outlined text-slate-400 text-2xl faq-icon flex-shrink-0">add</span>
+        </button>
+        <div class="faq-answer px-5">
+          <p class="text-slate-300 text-sm leading-relaxed pb-5">Cancellations must be communicated to the respective sport coordinator at least <span class="text-primary font-semibold">48 hours before the event</span>. This ensures that other students get an opportunity to participate.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Still have questions CTA -->
+    <div class="glass-panel rounded-xl p-8 text-center space-y-4">
+      <span class="material-symbols-outlined text-primary text-5xl">forum</span>
+      <h3 class="text-white text-2xl font-bold">Still have questions?</h3>
+      <p class="text-slate-400 text-sm">Our coordinators are happy to help you out.</p>
+      <a href="contact.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-blue-500 text-white font-semibold px-8 py-3 rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+        <span class="material-symbols-outlined text-base">call</span>
+        Contact a Coordinator
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 glass-panel py-8 px-6 text-center text-slate-500 text-sm">
+    © 2026 Sports Mahotsav · Katpur College Patan
+  </footer>
+
+</div>
+</div>
+
+<script>
+  function toggleFAQ(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    // close all
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    // open clicked if it was closed
+    if (!isOpen) item.classList.add('open');
+  }
+
+  function filterFAQ(category, pill) {
+    document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    document.querySelectorAll('.faq-item').forEach(item => {
+      if (category === 'all' || item.dataset.category === category) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+        item.classList.remove('open');
+      }
+    });
+  }
+</script>
+</body>
+</html>
