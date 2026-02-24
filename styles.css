@@ -90,39 +90,268 @@ body {
     filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
 }
 
-/* Characters Image */
+/* Characters Layout with Individual Images */
 .characters-container {
-    animation: charactersEntry 2s ease-out 0.5s forwards;
-    opacity: 0;
     width: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    z-index: 8;
 }
 
-@keyframes charactersEntry {
+.character-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: -30px;
+    position: relative;
+}
+
+.back-row {
+    z-index: 1;
+    gap: 200px;
+    margin-bottom: -40px;
+}
+
+.middle-row {
+    z-index: 2;
+    gap: 15px;
+}
+
+.front-row {
+    z-index: 3;
+    gap: 40px;
+    margin-bottom: 0;
+}
+
+/* Individual Character Styling */
+.character {
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
+}
+
+.character:hover {
+    transform: translateY(-20px) scale(1.15);
+    filter: drop-shadow(0 15px 35px rgba(255, 200, 0, 0.7));
+    z-index: 100;
+}
+
+/* Character Sizes */
+.back-row .character {
+    height: 180px;
+    width: auto;
+}
+
+.middle-row .character {
+    height: 200px;
+    width: auto;
+}
+
+.front-row .character {
+    height: 180px;
+    width: auto;
+}
+
+/* Unique Character Entrance Animations */
+.char-oggy {
+    animation: slideInLeft 0.8s ease-out 0.3s forwards;
+}
+
+.char-tom {
+    animation: slideInRight 0.8s ease-out 0.5s forwards;
+}
+
+.char-ben10 {
+    animation: popUp 0.8s ease-out 0.7s forwards;
+}
+
+.char-mrbean {
+    animation: popUp 0.8s ease-out 0.9s forwards;
+}
+
+.char-motu {
+    animation: bounceIn 0.8s ease-out 1.1s forwards;
+}
+
+.char-nobita {
+    animation: popUp 0.8s ease-out 1.3s forwards;
+}
+
+.char-bheem {
+    animation: popUp 0.8s ease-out 1.5s forwards;
+}
+
+.char-doraemon {
+    animation: rollIn 0.8s ease-out 1.7s forwards;
+}
+
+.char-jerry {
+    animation: jumpIn 0.8s ease-out 1.9s forwards;
+}
+
+.char-shinchan {
+    animation: danceIn 0.8s ease-out 2.1s forwards;
+}
+
+/* Animation Keyframes */
+@keyframes slideInLeft {
     0% {
         opacity: 0;
-        transform: translateY(150px);
+        transform: translateX(-150px) rotate(-20deg);
+    }
+    60% {
+        transform: translateX(10px) rotate(5deg);
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0) rotate(0);
     }
 }
 
-.characters-image {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    max-height: 55vh;
-    display: block;
-    object-fit: contain;
-    object-position: bottom center;
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(150px) rotate(20deg);
+    }
+    60% {
+        transform: translateX(-10px) rotate(-5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0);
+    }
+}
+
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) scale(0.3);
+    }
+    60% {
+        transform: translateY(-20px) scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) scale(0.5);
+    }
+    40% {
+        transform: translateY(-30px) scale(1.2);
+    }
+    60% {
+        transform: translateY(10px) scale(0.9);
+    }
+    80% {
+        transform: translateY(-10px) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes rollIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px) rotate(-360deg) scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0) scale(1);
+    }
+}
+
+@keyframes jumpIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) scaleY(1.5);
+    }
+    50% {
+        transform: translateY(-40px) scaleY(0.8);
+    }
+    70% {
+        transform: translateY(10px) scaleY(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+@keyframes danceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) rotate(-15deg);
+    }
+    25% {
+        transform: translateY(-20px) rotate(15deg);
+    }
+    50% {
+        transform: translateY(10px) rotate(-10deg);
+    }
+    75% {
+        transform: translateY(-10px) rotate(10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+    }
+}
+
+/* Idle Animations for Characters */
+.char-doraemon:not(:hover) {
+    animation: floatIdle 3s ease-in-out infinite 2.5s;
+}
+
+.char-jerry:not(:hover) {
+    animation: bounceIdle 2s ease-in-out infinite 2.7s;
+}
+
+.char-shinchan:not(:hover) {
+    animation: wiggleIdle 2.5s ease-in-out infinite 2.9s;
+}
+
+@keyframes floatIdle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes bounceIdle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes wiggleIdle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
 }
 
 /* Enter Button */
@@ -135,8 +364,7 @@ body {
     border-radius: 60px;
     cursor: pointer;
     position: absolute;
-    top: 45n: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
@@ -313,8 +541,20 @@ body {
         max-width: 500px;
     }
 
-    .characters-image {
-        max-height: 50vh;
+    .back-row {
+        gap: 150px;
+    }
+
+    .back-row .character {
+        height: 150px;
+    }
+
+    .middle-row .character {
+        height: 170px;
+    }
+
+    .front-row .character {
+        height: 150px;
     }
 
     .enter-button {
@@ -336,8 +576,30 @@ body {
         max-width: 400px;
     }
 
-    .characters-image {
-        max-height: 45vh;
+    .back-row {
+        gap: 80px;
+        margin-bottom: -30px;
+    }
+
+    .middle-row {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .front-row {
+        gap: 20px;
+    }
+
+    .back-row .character {
+        height: 120px;
+    }
+
+    .middle-row .character {
+        height: 130px;
+    }
+
+    .front-row .character {
+        height: 120px;
     }
 
     .enter-button {
@@ -364,8 +626,29 @@ body {
         max-width: 300px;
     }
 
-    .characters-image {
-        max-height: 40vh;
+    .back-row {
+        gap: 40px;
+        margin-bottom: -25px;
+    }
+
+    .middle-row {
+        gap: 8px;
+    }
+
+    .front-row {
+        gap: 15px;
+    }
+
+    .back-row .character {
+        height: 90px;
+    }
+
+    .middle-row .character {
+        height: 100px;
+    }
+
+    .front-row .character {
+        height: 90px;
     }
 
     .enter-button {
