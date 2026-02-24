@@ -119,9 +119,26 @@
 <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="faq.html">FAQs</a>
 <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="contact.html">Contact</a>
 </nav>
+<button id="menu-btn" onclick="toggleMenu()" class="md:hidden flex flex-col justify-center gap-[5px] w-9 h-9 p-1.5 rounded-md hover:bg-white/10 transition-colors" aria-label="Menu">
+  <span class="block w-full h-0.5 bg-slate-300 rounded transition-all"></span>
+  <span class="block w-full h-0.5 bg-slate-300 rounded transition-all"></span>
+  <span class="block w-full h-0.5 bg-slate-300 rounded transition-all"></span>
+</button>
 </header>
-
-<!-- Featured Highlights Section -->
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden flex-col gap-1 md:hidden glass-panel border-b border-white/10 px-6 py-3 z-40">
+  <a href="index.html#home" class="block py-2.5 px-3 text-slate-300 hover:text-primary hover:bg-white/5 rounded-md text-sm font-medium transition-colors">Home</a>
+  <a href="game.html" class="block py-2.5 px-3 text-slate-300 hover:text-primary hover:bg-white/5 rounded-md text-sm font-medium transition-colors">Game</a>
+  <a href="faq.html" class="block py-2.5 px-3 text-slate-300 hover:text-primary hover:bg-white/5 rounded-md text-sm font-medium transition-colors">FAQs</a>
+  <a href="contact.html" class="block py-2.5 px-3 text-slate-300 hover:text-primary hover:bg-white/5 rounded-md text-sm font-medium transition-colors">Contact</a>
+</div>
+<script>
+function toggleMenu(){
+  const m=document.getElementById('mobile-menu');
+  m.classList.toggle('hidden');
+  m.classList.toggle('flex');
+}
+</script>
 <section class="w-full px-4 md:px-6 py-8 md:py-12">
 <div class="slider-container rounded-lg p-4 md:p-8 max-w-6xl mx-auto">
 <div class="relative mx-auto h-64 md:h-96 rounded-md overflow-hidden shadow-2xl">

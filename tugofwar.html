@@ -69,10 +69,23 @@
       <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="faq.html">FAQs</a>
       <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="contact.html">Contact</a>
     </nav>
-    <a href="game.html" class="flex items-center gap-1 text-slate-400 hover:text-primary transition-colors text-sm font-medium">
+    <a href="game.html" class="hidden md:flex items-center gap-1 text-slate-400 hover:text-primary transition-colors text-sm font-medium">
       <span class="material-symbols-outlined text-lg">arrow_back</span> Back to Games
     </a>
+    <button id="menu-btn" onclick="toggleMenu()" class="md:hidden flex flex-col justify-center gap-[5px] w-9 h-9 p-1.5 rounded-md hover:bg-white/10 transition-colors" aria-label="Menu">
+      <span class="block w-full h-0.5 bg-slate-300 rounded"></span>
+      <span class="block w-full h-0.5 bg-slate-300 rounded"></span>
+      <span class="block w-full h-0.5 bg-slate-300 rounded"></span>
+    </button>
   </header>
+  <div id="mobile-menu" class="hidden flex-col gap-1 md:hidden glass-panel border-b border-white/10 px-6 py-3 z-40">
+    <a href="index.html#home" class="block py-2.5 px-3 text-slate-300 hover:text-primary hover:bg-white/5 rounded-md text-sm font-medium">Home</a>
+    <a href="game.html" class="block py-2.5 px-3 text-slate-300 hover:text-primary hover:bg-white/5 rounded-md text-sm font-medium">Game</a>
+    <a href="faq.html" class="block py-2.5 px-3 text-slate-300 hover:text-primary hover:bg-white/5 rounded-md text-sm font-medium">FAQs</a>
+    <a href="contact.html" class="block py-2.5 px-3 text-slate-300 hover:text-primary hover:bg-white/5 rounded-md text-sm font-medium">Contact</a>
+    <a href="game.html" class="block py-2.5 px-3 text-primary hover:bg-white/5 rounded-md text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-base">arrow_back</span>Back to Games</a>
+  </div>
+  <script>function toggleMenu(){const m=document.getElementById('mobile-menu');m.classList.toggle('hidden');m.classList.toggle('flex');}</script>
 
   <main class="flex-1 max-w-5xl mx-auto w-full px-4 md:px-8 py-12 md:py-16 space-y-10">
 

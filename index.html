@@ -209,9 +209,19 @@
             <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="#faq">FAQs</a>
             <a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium" href="#contact">Contact</a>
         </nav>
+        <button id="menu-btn" onclick="toggleMenu()" class="md:hidden flex flex-col justify-center gap-[5px] w-9 h-9 p-1.5 rounded-md hover:bg-white/10 transition-colors" aria-label="Menu">
+          <span class="block w-full h-0.5 bg-slate-300 rounded"></span>
+          <span class="block w-full h-0.5 bg-slate-300 rounded"></span>
+          <span class="block w-full h-0.5 bg-slate-300 rounded"></span>
+        </button>
     </header>
-
-    <!-- Hero Content -->
+    <div id="mobile-menu" class="hidden flex-col gap-1 md:hidden glass-panel border-b border-white/10 px-6 py-3 z-40">
+      <a href="#home" class="block py-2.5 px-3 text-slate-300 hover:text-primary hover:bg-white/5 rounded-md text-sm font-medium">Home</a>
+      <a href="game.html" class="block py-2.5 px-3 text-slate-300 hover:text-primary hover:bg-white/5 rounded-md text-sm font-medium">Game</a>
+      <a href="faq.html" class="block py-2.5 px-3 text-slate-300 hover:text-primary hover:bg-white/5 rounded-md text-sm font-medium">FAQs</a>
+      <a href="contact.html" class="block py-2.5 px-3 text-slate-300 hover:text-primary hover:bg-white/5 rounded-md text-sm font-medium">Contact</a>
+    </div>
+    <script>function toggleMenu(){const m=document.getElementById('mobile-menu');m.classList.toggle('hidden');m.classList.toggle('flex');}</script>
     <main class="flex-1 flex flex-col items-center justify-center px-4 py-6 md:py-8 relative" id="home">
         <!-- Floating Illustrations -->
         <div class="absolute top-20 left-10 md:left-40 opacity-20 md:opacity-40 floating-icon">
