@@ -1,0 +1,189 @@
+/* Additional Custom Styles */
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body overflow prevention */
+body {
+    overflow-x: hidden;
+}
+
+/* Animation for particles or background elements */
+@keyframes particle-float {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
+/* Gradient text animation */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Button hover effects */
+button {
+    position: relative;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Link hover effects */
+a {
+    position: relative;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #25c0f4;
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* Form elements styling */
+input, textarea, select {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #e2e8f0 !important;
+    backdrop-filter: blur(12px);
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(148, 163, 184, 0.6);
+}
+
+input:focus, textarea:focus, select:focus {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(37, 192, 244, 0.5) !important;
+    box-shadow: 0 0 12px rgba(37, 192, 244, 0.2);
+}
+
+/* Backdrop blur support fallback */
+@supports not (backdrop-filter: blur(1px)) {
+    .glass-panel {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Animation for countdown numbers */
+@keyframes number-flash {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(37, 192, 244, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(37, 192, 244, 0.8);
+    }
+}
+
+.number-updated {
+    animation: number-flash 0.3s ease;
+}
+
+/* Loading animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    a::after {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        font-size: 13px;
+    }
+
+    /* Reduce padding on mobile */
+    main {
+        padding: 24px 16px !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .glass-panel {
+        background: white;
+        border: 1px solid #e5e7eb;
+    }
+
+    .hero-gradient {
+        background: white;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Dark mode specific styles */
+.dark {
+    color-scheme: dark;
+}
+
+/* Text truncation utility */
+.truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Modern focus styles for accessibility */
+:focus-visible {
+    outline: 2px solid #25c0f4;
+    outline-offset: 2px;
+}
+
+/* Smooth color transitions */
+a, button, input, textarea, select {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
