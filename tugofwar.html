@@ -24,7 +24,7 @@
 </script>
 <style>
     .hero-gradient {
-      background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/header11.jpeg');
+      background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/hero-banner.png');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -89,6 +89,35 @@
 
   <main class="flex-1 max-w-5xl mx-auto w-full px-4 md:px-8 py-12 md:py-16 space-y-10">
 
+    <!-- Coordinator + Register -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="info-card rounded-lg p-6 flex items-center gap-6">
+        <img src="assets/collegelogo.png" alt="Coordinator" class="w-24 h-24 rounded-full object-cover border-4 border-primary/50 shadow-lg flex-shrink-0"/>
+        <div class="space-y-2">
+          <p class="text-slate-400 text-xs uppercase tracking-wider">Sports Coordinator</p>
+          <h3 class="text-white text-xl font-bold">Prof. Ramesh Patel</h3>
+          <a href="tel:+919876543210" class="flex items-center gap-2 text-primary hover:text-blue-300 transition-colors text-sm font-medium">
+            <span class="material-symbols-outlined text-base">call</span>
+            +91 98765 43210
+          </a>
+          <a href="mailto:ramesh.patel@katpur.edu" class="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors text-sm">
+            <span class="material-symbols-outlined text-base">mail</span>
+            ramesh.patel@katpur.edu
+          </a>
+        </div>
+      </div>
+      <div class="info-card rounded-lg p-6 flex flex-col items-center justify-center text-center gap-5">
+        <span class="material-symbols-outlined text-primary text-5xl">app_registration</span>
+        <div>
+          <h3 class="text-white text-xl font-bold mb-1">Ready to Participate?</h3>
+          <p class="text-slate-400 text-sm">Fill out the registration form to secure your spot.</p>
+        </div>
+        <a href="https://forms.google.com" target="_blank" class="btn-register px-8 py-3 rounded-full text-white font-semibold text-base w-full text-center">
+          Register via Google Form
+        </a>
+      </div>
+    </div>
+
     <!-- Info Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="info-card rounded-lg p-5 flex items-center gap-4">
@@ -132,39 +161,6 @@
       </div>
     </div>
 
-    <!-- Coordinator + Register -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-      <!-- Coordinator Card -->
-      <div class="info-card rounded-lg p-6 flex items-center gap-6">
-        <img src="assets/collegelogo.png" alt="Coordinator" class="w-24 h-24 rounded-full object-cover border-4 border-primary/50 shadow-lg flex-shrink-0"/>
-        <div class="space-y-2">
-          <p class="text-slate-400 text-xs uppercase tracking-wider">Sports Coordinator</p>
-          <h3 class="text-white text-xl font-bold">Prof. Ramesh Patel</h3>
-          <a href="tel:+919876543210" class="flex items-center gap-2 text-primary hover:text-blue-300 transition-colors text-sm font-medium">
-            <span class="material-symbols-outlined text-base">call</span>
-            +91 98765 43210
-          </a>
-          <a href="mailto:ramesh.patel@katpur.edu" class="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors text-sm">
-            <span class="material-symbols-outlined text-base">mail</span>
-            ramesh.patel@katpur.edu
-          </a>
-        </div>
-      </div>
-
-      <!-- Register Card -->
-      <div class="info-card rounded-lg p-6 flex flex-col items-center justify-center text-center gap-5">
-        <span class="material-symbols-outlined text-primary text-5xl">app_registration</span>
-        <div>
-          <h3 class="text-white text-xl font-bold mb-1">Ready to Participate?</h3>
-          <p class="text-slate-400 text-sm">Fill out the registration form to secure your spot.</p>
-        </div>
-        <a href="https://forms.google.com" target="_blank" class="btn-register px-8 py-3 rounded-full text-white font-semibold text-base w-full text-center">
-          Register via Google Form
-        </a>
-      </div>
-
-    </div>
   </main>
 
   <!-- Footer -->
