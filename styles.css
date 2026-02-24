@@ -66,7 +66,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 80px;
+    padding-top: 40px;
 }
 
 @keyframes titleEntry {
@@ -84,8 +84,8 @@ body {
 }
 
 .title-image {
-    max-width: 700px;
-    width: 85%;
+    max-width: 600px;
+    width: 75%;
     height: auto;
     filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
 }
@@ -118,6 +118,7 @@ body {
     width: 100%;
     max-width: 100%;
     height: auto;
+    max-height: 55vh;
     display: block;
     object-fit: contain;
     object-position: bottom center;
@@ -126,15 +127,15 @@ body {
 
 /* Enter Button */
 .enter-button {
-    font-family: 'Bangers', cursive;
-    font-size: 1.8rem;
-    padding: 18px 45px;
+    font-family: 5rem;
+    padding: 15px 40px;
     background: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FFC837 100%);
     color: white;
     border: 4px solid white;
     border-radius: 60px;
     cursor: pointer;
     position: absolute;
+    top: 45n: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -190,7 +191,7 @@ body {
 }
 
 .button-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
     animation: iconBounce 1.5s ease-in-out infinite;
 }
 
@@ -305,16 +306,20 @@ body {
    ============================================ */
 @media (max-width: 1200px) {
     .title-container {
-        padding-top: 60px;
+        padding-top: 30px;
     }
 
     .title-image {
-        max-width: 600px;
+        max-width: 500px;
+    }
+
+    .characters-image {
+        max-height: 50vh;
     }
 
     .enter-button {
-        font-size: 1.5rem;
-        padding: 16px 40px;
+        font-size: 1.3rem;
+        padding: 14px 35px;
     }
 
     .float-emoji {
@@ -324,21 +329,25 @@ body {
 
 @media (max-width: 768px) {
     .title-container {
-        padding-top: 40px;
+        padding-top: 25px;
     }
 
     .title-image {
-        max-width: 450px;
+        max-width: 400px;
+    }
+
+    .characters-image {
+        max-height: 45vh;
     }
 
     .enter-button {
-        font-size: 1.2rem;
-        padding: 14px 30px;
+        font-size: 1.1rem;
+        padding: 12px 28px;
         gap: 10px;
     }
 
     .button-icon {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .float-emoji {
@@ -348,21 +357,25 @@ body {
 
 @media (max-width: 480px) {
     .title-container {
-        padding-top: 30px;
+        padding-top: 20px;
     }
 
     .title-image {
-        max-width: 320px;
+        max-width: 300px;
+    }
+
+    .characters-image {
+        max-height: 40vh;
     }
 
     .enter-button {
-        font-size: 1rem;
-        padding: 12px 25px;
+        font-size: 0.9rem;
+        padding: 10px 22px;
         gap: 8px;
     }
 
     .button-icon {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .float-emoji {
