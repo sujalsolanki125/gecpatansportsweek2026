@@ -4,7 +4,7 @@ export const coordinators = {
     title: 'Sports Week 2026 Coordinator',
     phone: '+91 98765 40000',
     email: 'arvind.kumar@katpur.edu',
-    image: '/assets/collegelogo.png'
+    image: '/src/assets/collegelogo.png'
   },
   students: [
     {

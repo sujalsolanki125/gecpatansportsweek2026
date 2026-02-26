@@ -4,7 +4,7 @@ import { coordinators } from '../data/coordinatorsData';
 export function ContactPage() {
   return (
     <>
-      <div className="bg-[url('/assets/bg1.png')] bg-cover bg-center bg-no-repeat relative w-full flex flex-col hero-gradient overflow-x-hidden">
+      <div className="bg-[url('src/assets/bg1.png')] bg-cover bg-center bg-no-repeat relative w-full flex flex-col hero-gradient overflow-x-hidden">
         <main className="flex-1 max-w-6xl mx-auto w-full px-4 md:px-8 py-12 md:py-16 space-y-14">
           
           {/* Page Header */}
@@ -72,7 +72,7 @@ export function ContactPage() {
                   key={coord.id} 
                   className=" rounded-xl p-6 flex flex-col items-center text-center gap-5   hover:bg-white/5 transition-all hover:border-primary/30">
                     <div className="relative">
-                      <img src="/assets/collegelogo.png" alt={coord.name} className="w-24 h-24 rounded-full object-cover border-4 border-primary/50 shadow-lg"/>
+                      <img src="/src/assets/collegelogo.png" alt={coord.name} className="w-24 h-24 rounded-full object-cover border-4 border-primary/50 shadow-lg"/>
                     </div>
                     <div className="space-y-1">
                       <h3 className="text-primary text-xl font-bold">{coord.name}</h3>

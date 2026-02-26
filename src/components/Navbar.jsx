@@ -14,7 +14,7 @@ export function Navbar() {
     <header className="bg-white font text-black flex items-center justify-between whitespace-nowrap border-b border-primary/20 px-6 md:px-20 py-4 sticky top-0 z-50">
       <Link to="/" className="flex items-center gap-3">
         <div className="h-10 w-10">
-          <img src="/assets/collegelogo.png" alt="College Logo" className="h-full w-full object-contain" />
+          <img src="/src/assets/collegelogo.png" alt="College Logo" className="h-full w-full object-contain" />
         </div>
         <h2 className="text-primary text-lg md:text-xl tracking-tight">Sports Week 2026</h2>
       </Link>

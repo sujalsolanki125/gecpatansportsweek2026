@@ -8,7 +8,7 @@ export function GamePage() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="bg-[url('/assets/bg1.png')] bg-cover bg-center bg-no-repeat relative w-full flex flex-col hero-gradient overflow-x-hidden">
+      <div className="bg-[url('/src/assets/bg1.png')] bg-cover bg-center bg-no-repeat relative w-full flex flex-col hero-gradient overflow-x-hidden">
 
         <main className="p-20 flex-1 max-w-7xl mx-auto w-full px-4 md:px-8 pb-12 md:pb-16">
           {/* Sports Events Grid */}

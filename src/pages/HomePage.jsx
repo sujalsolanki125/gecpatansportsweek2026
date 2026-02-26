@@ -7,7 +7,7 @@ export function HomePage() {
     const navigate = useNavigate();
 
   return (
-      <div className="bg-[url('/assets/bg1.png')] bg-cover bg-center bg-no-repeat  relative flex-1 w-full flex flex-col bg-background-dark overflow-x-hidden">
+      <div className="bg-[url('/src/assets/bg1.png')] bg-cover bg-center bg-no-repeat  relative flex-1 w-full flex flex-col bg-background-dark overflow-x-hidden">
         <main className="flex-1 flex flex-col items-center justify-center px-4 py-6 md:py-8 relative">
          
 

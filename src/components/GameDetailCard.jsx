@@ -31,7 +31,7 @@ export function GameDetailCard({ game }) {
           {/* Coordinator + Register */}
           <Card className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="info-card p-6 flex items-center gap-6">
-              <img src="/assets/collegelogo.png" alt="Coordinator" className="w-24 h-24 rounded-full object-cover border-4 border-primary/50 shadow-lg flex-shrink-0"/>
+              <img src="/src/assets/collegelogo.png" alt="Coordinator" className="w-24 h-24 rounded-full object-cover border-4 border-primary/50 shadow-lg flex-shrink-0"/>
               <div className="space-y-2">
                 <p className="text-secondary text-xs uppercase tracking-wider">Sports Coordinator</p>
                 <h3 className="text-primary text-xl font-bold">{game.coordinator}</h3>
