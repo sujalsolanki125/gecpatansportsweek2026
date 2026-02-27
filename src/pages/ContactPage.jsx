@@ -4,7 +4,7 @@ import { coordinators } from '../data/coordinatorsData';
 export function ContactPage() {
   return (
     <>
-      <div className="bg-[url('src/assets/bg1.png')] bg-cover bg-center bg-no-repeat relative w-full flex flex-col hero-gradient overflow-x-hidden">
+      <div className="bg-[url('/src/assets/bg1.png')] bg-cover bg-center bg-no-repeat relative w-full flex flex-col hero-gradient overflow-x-hidden">
         <main className="flex-1 max-w-6xl mx-auto w-full px-4 md:px-8 py-12 md:py-16 space-y-14">
           
           {/* Page Header */}
