@@ -2,6 +2,8 @@ import { useState, useCallback, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { galleryImages } from '../data/galleryData';
 import { Button, Card } from 'pixel-retroui';
+import prevIcon from '../assets/prev.png';
+import nextIcon from '../assets/next.png';
 
 export function GalleryPage() {
     const [lightbox, setLightbox] = useState(null);
@@ -123,7 +125,7 @@ export function GalleryPage() {
                             onClick={(e) => { e.stopPropagation(); goPrev(); }}
                             aria-label="Previous"
                         >
-                            <img className="w-6" src="/src/assets/prev.png" alt="" />
+                            <img className="w-6" src={prevIcon} alt="" />
                         </Button>
 
                         {/* Content */}
@@ -148,7 +150,7 @@ export function GalleryPage() {
                             onClick={(e) => { e.stopPropagation(); goNext(); }}
                             aria-label="Next"
                         >
-                            <img className="w-6" src="/src/assets/next.png" alt="" />
+                            <img className="w-6" src={nextIcon} alt="" />
                         </Button>
                     </div>,
                     document.body
