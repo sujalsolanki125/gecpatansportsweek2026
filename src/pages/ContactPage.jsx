@@ -37,15 +37,15 @@ export function ContactPage() {
                   <h3 className="text-2xl md:text-3xl font-bold text-primary">{coordinators.main.name}</h3>
                   <p className="text-secondary text-sm mt-1">{coordinators.main.title}</p>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div className="pb-3 flex items-center gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 justify-items-center">
+                  <div className="pb-3 flex items-center gap-3 max-w-fit">
                     <span className="material-symbols-outlined text-primary text-xl">call</span>
                     <div>
                       <p className="text-slate-500 text-xs">Phone</p>
                       <a href={`tel:${coordinators.main.phone}`} className="text-primary font-medium hover:text-secondary transition-colors">{coordinators.main.phone}</a>
                     </div>
                   </div>
-                  <div className="pb-3 flex items-center gap-3">
+                  <div className="pb-3 flex items-center gap-3 max-w-fit">
                     <span className="material-symbols-outlined text-primary text-xl">mail</span>
                     <div>
                       <p className="text-slate-500 text-xs">Email</p>

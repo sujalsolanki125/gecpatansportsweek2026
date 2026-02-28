@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+
+const ACCENT = '#F30051';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   const isActive = (path) =>
@@ -10,100 +13,103 @@ export function Navbar() {
       ? location.pathname === '/game' || location.pathname.startsWith('/game/')
       : location.pathname === path;
 
+  // Close menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
+  // Add shadow on scroll
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 8);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { path: '/', label: 'Home' },
+    { path: '/game', label: 'Games' },
+    { path: '/faq', label: 'FAQs' },
+    { path: '/gallery', label: 'Gallery' },
+    { path: '/contact', label: 'Contact' },
+  ];
+
   return (
-    <header className="bg-white font text-black flex items-center justify-between whitespace-nowrap border-b border-primary/20 px-6 md:px-20 py-4 sticky top-0 z-50">
-      <Link to="/" className="flex items-center gap-3">
-        <div className="h-10 w-10">
-          <img src="/collegelogo.png" alt="College Logo" className="h-full w-full object-contain" />
-        </div>
-        <h2 className="text-primary text-lg md:text-xl tracking-tight">Sports Week 2026</h2>
-      </Link>
+    <header
+      className={`bg-white font text-black flex flex-col whitespace-nowrap border-b border-primary/20 sticky top-0 z-50 transition-shadow duration-300 ${scrolled ? 'shadow-md' : ''}`}
+    >
+      {/* Top bar */}
+      <div className="flex items-center justify-between px-5 md:px-20 py-3">
+        <Link to="/" className="flex items-center gap-3">
+          <div className="h-10 w-10 flex-shrink-0">
+            <img src="/collegelogo.png" alt="College Logo" className="h-full w-full object-contain" />
+          </div>
+          <h2 className="text-primary text-lg md:text-xl tracking-tight leading-tight">
+            Sports Week 2026
+          </h2>
+        </Link>
 
-      {/* Desktop Navigation */}
-      <nav className=" hidden md:flex items-center gap-10">
-        <Link
-          className={`transition-colors text-sm font-medium ${isActive('/') ? 'nav-active' : 'text-gray-500 hover:text-primary'}`}
-          to="/"
-        >
-          Home
-        </Link>
-        <Link
-          className={`transition-colors text-sm font-medium ${isActive('/game') ? 'nav-active' : 'text-gray-500 hover:text-primary'}`}
-          to="/game"
-        >
-          Games
-        </Link>
-        <Link
-          className={`transition-colors text-sm font-medium ${isActive('/faq') ? 'nav-active' : 'text-gray-500 hover:text-primary'}`}
-          to="/faq"
-        >
-          FAQs
-        </Link>
-        <Link
-          className={`transition-colors text-sm font-medium ${isActive('/gallery') ? 'nav-active' : 'text-gray-500 hover:text-primary'}`}
-          to="/gallery"
-        >
-          Gallery
-        </Link>
-        <Link
-          className={`transition-colors text-sm font-medium ${isActive('/contact') ? 'nav-active' : 'text-gray-500 hover:text-primary'}`}
-          to="/contact"
-        >
-          Contact
-        </Link>
-      </nav>
+        {/* Desktop Navigation — unchanged original style */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navLinks.map(({ path, label }) => (
+            <Link
+              key={path}
+              to={path}
+              className={`transition-colors text-sm font-medium ${isActive(path) ? 'nav-active' : 'text-gray-500 nav-hover'
+                }`}
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
 
-      {/* Mobile Menu Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex flex-col md:hidden justify-center gap-[5px] w-9 h-9 p-1.5 rounded-md hover:bg-primary/10 transition-colors"
-        aria-label="Menu"
+        {/* Mobile Hamburger Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex md:hidden flex-col justify-center items-center gap-[5px] w-10 h-10 p-2 rounded-md transition-colors flex-shrink-0 nav-hamburger-hover"
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isOpen}
+        >
+          <span className={`block w-5 h-0.5 bg-gray-700 rounded transition-all duration-300 origin-center ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+          <span className={`block w-5 h-0.5 bg-gray-700 rounded transition-all duration-300 ${isOpen ? 'opacity-0 scale-x-0' : ''}`} />
+          <span className={`block w-5 h-0.5 bg-gray-700 rounded transition-all duration-300 origin-center ${isOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+        </button>
+      </div>
+
+      {/* Mobile Dropdown — solid white bg, accent color for active */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+        aria-hidden={!isOpen}
       >
-        <span className="block w-full h-0.5 bg-black rounded"></span>
-        <span className="block w-full h-0.5 bg-black rounded"></span>
-        <span className="block w-full h-0.5 bg-black rounded"></span>
-      </button>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="absolute top-full left-0 right-0 flex-col gap-1 bg-background-dark border-b border-primary/20 px-6 py-3 z-40 md:hidden flex">
-          <Link
-            to="/"
-            onClick={() => setIsOpen(false)}
-            className={`block py-2.5 px-3 rounded-md text-sm font-medium transition-colors ${isActive('/') ? 'nav-active-mobile' : 'text-gray-500 hover:text-primary hover:bg-primary/10'}`}
-          >
-            Home
-          </Link>
-          <Link
-            to="/game"
-            onClick={() => setIsOpen(false)}
-            className={`block py-2.5 px-3 rounded-md text-sm font-medium transition-colors ${isActive('/game') ? 'nav-active-mobile' : 'text-gray-500 hover:text-primary hover:bg-primary/10'}`}
-          >
-            Games
-          </Link>
-          <Link
-            to="/faq"
-            onClick={() => setIsOpen(false)}
-            className={`block py-2.5 px-3 rounded-md text-sm font-medium transition-colors ${isActive('/faq') ? 'nav-active-mobile' : 'text-gray-500 hover:text-primary hover:bg-primary/10'}`}
-          >
-            FAQs
-          </Link>
-          <Link
-            to="/gallery"
-            onClick={() => setIsOpen(false)}
-            className={`block py-2.5 px-3 rounded-md text-sm font-medium transition-colors ${isActive('/gallery') ? 'nav-active-mobile' : 'text-gray-500 hover:text-primary hover:bg-primary/10'}`}
-          >
-            Gallery
-          </Link>
-          <Link
-            to="/contact"
-            onClick={() => setIsOpen(false)}
-            className={`block py-2.5 px-3 rounded-md text-sm font-medium transition-colors ${isActive('/contact') ? 'nav-active-mobile' : 'text-gray-500 hover:text-primary hover:bg-primary/10'}`}
-          >
-            Contact
-          </Link>
-        </div>
-      )}
+        <nav className="bg-white border-t border-gray-100 px-4 py-3 flex flex-col gap-1 shadow-lg">
+          {navLinks.map(({ path, label }) => (
+            <Link
+              key={path}
+              to={path}
+              onClick={() => setIsOpen(false)}
+              className="block py-3 px-4 rounded-lg text-sm font-medium transition-all duration-200 border-l-4"
+              style={
+                isActive(path)
+                  ? { color: ACCENT, borderLeftColor: ACCENT, backgroundColor: `${ACCENT}14` }
+                  : { color: '#374151', borderLeftColor: 'transparent' }
+              }
+              onMouseEnter={(e) => {
+                if (!isActive(path)) {
+                  e.currentTarget.style.color = ACCENT;
+                  e.currentTarget.style.backgroundColor = `${ACCENT}0d`;
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!isActive(path)) {
+                  e.currentTarget.style.color = '#374151';
+                  e.currentTarget.style.backgroundColor = '';
+                }
+              }}
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
+      </div>
     </header>
   );
 }
