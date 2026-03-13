@@ -41,7 +41,7 @@ export const allGames = [
     phone: '6353525412',
     studentCoordinators: [
       { name: 'Sujal Solanki', phone: '6353525412' },
-      { name: 'Purva Modi', phone: '9925963711' },
+      { name: 'Purav Modi', phone: '9925963711' },
       { name: 'Patel Aryan', phone: '8799151636' }
     ],
     email: 'student.coordinator@sportsweek.local',
