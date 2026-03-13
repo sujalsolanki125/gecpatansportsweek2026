@@ -12,7 +12,7 @@ const faqData = [
     id: 2,
     category: 'registration',
     question: 'What is the last date for registration?',
-    answer: 'The registration deadline is March 7, 2026. Late registrations will not be accepted under any circumstances. We encourage students to register as soon as possible to secure their spot.'
+    answer: 'The registration deadline is March 16, 2026. Late registrations will not be accepted under any circumstances. We encourage students to register as soon as possible to secure their spot.'
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const faqData = [
     id: 4,
     category: 'registration',
     question: 'Is there a registration fee?',
-    answer: 'No. Participation in Sports Week 2026 is completely free of charge for all enrolled students of Katpur College Patan.'
+    answer: 'No. Participation in Sports Week 2026 is completely free of charge. However, a registration fee of ₹1100 per team is applicable only for the Boys Cricket event. All other sports events are free of charge.'
   },
   {
     id: 5,
@@ -39,16 +39,16 @@ const faqData = [
     answer: 'We have 12 different sports events including Cricket, Kabaddi, Volleyball, Badminton, Table Tennis, Chess, Carrom, Kho Kho, Tug of War, and more.'
   },
   {
-    id: 7,
-    category: 'rules',
-    question: 'What are the dress code and equipment requirements?',
-    answer: 'Sports shoes and college uniform are mandatory for most events. Detailed equipment requirements for each sport are provided on the respective sport\'s detail page.'
-  },
+  id: 7,
+  category: 'certificates',
+  question: 'Do participants receive any certificates?',
+  answer: 'Yes. All participants will receive a Participation E-Certificate, and winners will receive a Winning E-Certificate. These certificates are also considered under the GTU 100 Points Activity.'
+},
   {
     id: 8,
     category: 'general',
     question: 'When and where will the events be held?',
-    answer: 'Sports Week 2026 is scheduled for March 12-21, 2026. Events will be held at various venues across the college campus. Specific venue details are provided on each sport\'s page.'
+    answer: 'Sports Week 2026 is scheduled from March 18 to March 25, 2026. Events will be held at various venues across the college campus. Specific venue details are provided on each sport page.'
   }
 ];
 

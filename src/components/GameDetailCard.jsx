@@ -1,9 +1,24 @@
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { Button, Card } from 'pixel-retroui';
 
 
 export function GameDetailCard({ game }) {
-  const navigate = useNavigate();
+  const [copiedPhone, setCopiedPhone] = useState('');
+  const coordinators = game.studentCoordinators?.length
+    ? game.studentCoordinators
+    : [{ name: game.coordinator, phone: game.phone, email: game.email }];
+  const firstCoordinator = coordinators[0];
+  const remainingCoordinators = coordinators.slice(1);
+
+  const handleCopyPhone = async (phone) => {
+    try {
+      await navigator.clipboard.writeText(phone);
+      setCopiedPhone(phone);
+      setTimeout(() => setCopiedPhone(''), 1200);
+    } catch {
+      setCopiedPhone('');
+    }
+  };
 
   return (
     <>
@@ -38,23 +53,54 @@ export function GameDetailCard({ game }) {
 
 
           {/* Coordinator + Register */}
-          <Card className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
-            <div className="p-6 flex flex-col sm:flex-row items-center gap-6 justify-items-center justify-center">
-              <img src="/collegelogo.png" alt="Coordinator" className="w-24 h-24 rounded-full object-cover border-4 border-primary/50 shadow-lg flex-shrink-0" />
-              <div className="flex-col justify-items-center">
-                <p className="text-secondary text-xs uppercase tracking-wider">Sports Coordinator</p>
-                <h3 className="text-primary text-xl font-bold">{game.coordinator}</h3>
-                <a href={`tel:${game.phone}`} className="flex items-center gap-2 text-secondary hover:text-primary transition-colors text-sm font-medium">
-                  <span className="material-symbols-outlined text-base">call</span>
-                  {game.phone}
-                </a>
-                <a href={`mailto:${game.email}`} className="flex items-center gap-2 text-secondary hover:text-primary transition-colors text-sm">
-                  <span className="material-symbols-outlined text-base">mail</span>
-                  {game.email}
-                </a>
+          <Card className="grid grid-cols-1 md:grid-cols-2 md:gap-0 overflow-hidden">
+            <div className="p-6 md:p-8 flex flex-col justify-center">
+              <p className="text-secondary text-xs uppercase tracking-wider mb-4 text-center md:text-left">Student Coordinators</p>
+              <div className="space-y-3">
+                {firstCoordinator && (
+                  <div className="flex flex-col gap-1 text-center md:text-left">
+                    <h3 className="text-primary text-lg font-bold leading-none">{firstCoordinator.name}</h3>
+                    <div className="flex items-center gap-2 md:justify-start justify-center flex-wrap">
+                      <a href={`tel:${firstCoordinator.phone}`} className="inline-flex items-center gap-2 text-secondary hover:text-primary transition-colors text-sm font-medium">
+                        <span className="material-symbols-outlined text-base">call</span>
+                        {firstCoordinator.phone}
+                      </a>
+                      <button
+                        type="button"
+                        onClick={() => handleCopyPhone(firstCoordinator.phone)}
+                        className="text-xs px-2 py-1 border-2 border-black bg-primary text-black hover:brightness-95 transition"
+                      >
+                        {copiedPhone === firstCoordinator.phone ? 'Copied' : 'Copy'}
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {remainingCoordinators.length > 0 && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
+                    {remainingCoordinators.map((person, idx) => (
+                    <div key={`${person.name}-${idx}`} className="flex flex-col gap-1 text-center md:text-left">
+                      <h3 className="text-primary text-lg font-bold leading-none">{person.name}</h3>
+                      <div className="flex items-center gap-2 md:justify-start justify-center flex-wrap">
+                        <a href={`tel:${person.phone}`} className="inline-flex items-center gap-2 text-secondary hover:text-primary transition-colors text-sm font-medium">
+                          <span className="material-symbols-outlined text-base">call</span>
+                          {person.phone}
+                        </a>
+                        <button
+                          type="button"
+                          onClick={() => handleCopyPhone(person.phone)}
+                          className="text-xs px-2 py-1 border-2 border-black bg-primary text-black hover:brightness-95 transition"
+                        >
+                          {copiedPhone === person.phone ? 'Copied' : 'Copy'}
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                  </div>
+                )}
               </div>
             </div>
-            <div className="info-card p-6 flex flex-col items-center justify-center text-center gap-5">
+            <div className="info-card p-6 md:p-8 flex flex-col items-center justify-center text-center gap-5 border-t md:border-t-0 md:border-l border-primary/20">
               <span className="material-symbols-outlined text-primary text-5xl">app_registration</span>
               <div>
                 <h3 className="text-primary text-xl font-bold mb-1">Ready to Participate?</h3>
@@ -76,19 +122,12 @@ export function GameDetailCard({ game }) {
           </Card>
 
           {/* Info Grid */}
-          <Card className="grid grid-cols-1 md:grid-cols-3 md:gap-6 gap-1">
+          <Card className="grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-1">
             <div className="info-card p-5 flex items-center gap-4">
               <span className="material-symbols-outlined text-primary text-4xl">group</span>
               <div>
                 <p className="text-secondary text-xs uppercase tracking-wider">Team Size</p>
                 <p className="text-primary text-xl font-bold">{game.teamSize}</p>
-              </div>
-            </div>
-            <div className="info-card p-5 flex items-center gap-4">
-              <span className="material-symbols-outlined text-secondary text-4xl">event</span>
-              <div>
-                <p className="text-secondary text-xs uppercase tracking-wider">Event Date</p>
-                <p className="text-primary text-xl font-bold">{game.eventDate}</p>
               </div>
             </div>
             <div className="info-card p-5 flex items-center gap-4">

@@ -1,59 +1,38 @@
-export const coordinators = {
-  main: {
-    name: 'Prof. Arvind Kumar',
-    title: 'Sports Week 2026 Coordinator',
-    phone: '+91 98765 40000',
-    email: 'arvind.kumar@katpur.edu',
-    image: '/collegelogo.png'
+import krishImg from '../assets/Krish.jpeg';
+import priyankImg from '../assets/Priyank.jpeg';
+import kamleshImg from '../assets/Kamlesh.jpeg';
+import sujalImg from '../assets/sujal.jpeg';
+import rishuImg from '../assets/Rishu.jpeg';
+import aryanImg from '../assets/Aryan.jpeg';
+import dhruvilImg from '../assets/Dhruvil.jpeg';
+
+export const coordinatorSections = [
+  {
+    id: 'main-coordinator',
+    title: 'Main Coordinator',
+    icon: 'star',
+    members: [
+      { id: 1, name: 'Singh Rishu (VI CSE)', phone: '6354929746', image: rishuImg },
+      { id: 2, name: 'Singh Aryan (VI CSE)', phone: '9313979224', image: aryanImg },
+      { id: 3, name: 'Kavad Dhruvil (VI CSE)', phone: '7405750247', image: dhruvilImg }
+    ]
   },
-  students: [
-    {
-      id: 1,
-      name: 'Rahul Sharma',
-      semester: '6th Sem',
-      branch: 'Computer Science',
-      phone: '+91 98765 41001',
-      sports: 'Cricket & Kabaddi'
-    },
-    {
-      id: 2,
-      name: 'Priya Patel',
-      semester: '4th Sem',
-      branch: 'Information Technology',
-      phone: '+91 98765 41002',
-      sports: 'Tug Of War & Volleyball'
-    },
-    {
-      id: 3,
-      name: 'Arjun Singh',
-      semester: '6th Sem',
-      branch: 'Electronics',
-      phone: '+91 98765 41003',
-      sports: 'Badminton & Table Tennis'
-    },
-    {
-      id: 4,
-      name: 'Ananya Verma',
-      semester: '4th Sem',
-      branch: 'Mechanical Engineering',
-      phone: '+91 98765 41004',
-      sports: 'Kho Kho & Kabaddi'
-    },
-    {
-      id: 5,
-      name: 'Virat Desai',
-      semester: '6th Sem',
-      branch: 'Civil Engineering',
-      phone: '+91 98765 41005',
-      sports: 'Chess & Carrom'
-    },
-    {
-      id: 6,
-      name: 'Divya iyer',
-      semester: '4th Sem',
-      branch: 'Computer Science',
-      phone: '+91 98765 41006',
-      sports: 'General Coordination'
-    }
-  ]
-};
+  {
+    id: 'registration-certification',
+    title: 'Registration & Certification',
+    icon: 'assignment_turned_in',
+    members: [
+      { id: 1, name: 'Patil Krish Bhavik (VI CSE)', phone: '9998628467', image: krishImg },
+      { id: 2, name: 'Bharadra Priyank (VI CSE)', phone: '9328702326', image: priyankImg }
+    ]
+  },
+  {
+    id: 'web-team',
+    title: 'Web Team',
+    icon: 'code',
+    members: [
+      { id: 1, name: 'Kamlesh Suthar (VI CSE)', image: kamleshImg },
+      { id: 2, name: 'Sujalkumar Solanki (VI CSE)', image: sujalImg }
+    ]
+  }
+];
