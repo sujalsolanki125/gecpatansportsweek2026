@@ -75,12 +75,12 @@ export const allGames = [
     phone: '8866416429',
     studentCoordinators: [
       { name: 'Imdad Ali', phone: '8866416429' },
-      { name: 'Janish Patel', phone: '9328681889' },
+      { name: 'Jainish Patel', phone: '9328681889' },
       { name: 'Gaurav Raj', phone: '7984269154' }
     ],
     email: 'student.coordinator@sportsweek.local',
     icon: 'sports_cricket',
-    about: 'Experience the thrill of international cricket format. Our T20 tournament ensures fast-paced and exciting gameplay.',
+    about: 'Experience the thrill of international cricket format. Our T10 tournament ensures fast-paced and exciting gameplay.',
     details: 'Cricket is a bat-and-ball sport played between two teams of 11 players. The batting side scores runs while the fielding side tries to dismiss the batters. Our inter-college tournament follows T20 format.',
     rules: [
        'Participation to GECP SPORTS CRICKET TOURNAMENT is only for GEC Patan Students',
@@ -110,7 +110,7 @@ export const allGames = [
     studentCoordinators: [
       { name: 'Mangoliya Sanket', phone: '9160544023' },
       { name: 'Abhi Sharma', phone: '7226977805' },
-      { name: 'Shiram Chaudhary', phone: '9427889940' }
+      { name: 'Shivam Chaudhary', phone: '9427889940' }
     ],
     email: 'student.coordinator@sportsweek.local',
     icon: 'sports_rugby',
@@ -366,7 +366,7 @@ export const allGames = [
     phone: '8866415588',
     studentCoordinators: [
       { name: 'Parv Joshi', phone: '8866415588' },
-      { name: 'Utkarsh Sukla', phone: '8429899563' },
+      { name: 'Utkarsh Sukla', phone: '9429899563' },
       { name: 'Niraj Singh', phone: '8140909063' }
     ],
     email: 'student.coordinator@sportsweek.local',
@@ -398,7 +398,7 @@ export const allGames = [
     studentCoordinators: [
       { name: 'Khamma Madhar', phone: '8160537881' },
       { name: 'Neeti Patel', phone: '6352332630' },
-      { name: 'Rawat Bhavya', phone: '9327184036' }
+      { name: 'Raval Bhavya', phone: '9327184036' }
     ],
     email: 'student.coordinator@sportsweek.local',
     icon: 'sports_cricket',
